@@ -23,7 +23,7 @@ class ApiController extends BaseSiteController
         Request $request,
         CmsService $cmsService
     ) {
-      
+
         return new JsonResponse([
             'status' => "OK",
             'list' =>  $cmsService->getFaqItems()
@@ -81,6 +81,4 @@ class ApiController extends BaseSiteController
             'status' => "OK",
         ]);
     }
-
-
 }
