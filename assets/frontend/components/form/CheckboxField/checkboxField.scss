@@ -1,0 +1,18 @@
+@use "./../../../common/colors" as *;
+
+.checkbox-field {
+    display:flex;
+    >.text {
+        margin-top:10px;
+        color: $text-blue;
+        &.--error {
+            color: $error;
+            a {
+                color: $error !important;
+                &:hover {
+                    color: $error !important;
+                }
+            }
+        }
+    }
+}

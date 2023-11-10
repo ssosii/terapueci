@@ -1,0 +1,102 @@
+@use "./colors.scss" as *;
+@use "./variables.scss" as *;
+@use "./grid.scss" as *;
+@use "./mixins.scss" as *;
+
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    // justify-content: center;
+    overflow-y: scroll;
+    overflow-y: hidden;
+    height: 80px;
+    width: 100%;
+    margin: 20px auto 80px auto;
+    max-width: 900px;
+    @include scrolStyles();
+    // @include mobile() {
+    //     width: 95%;
+    //     margin: 20px auto 0 auto;
+    // }
+
+    &__button {
+        width: 100%;
+        background: $primary;
+        font-size: 14px;
+        height: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-top: 30px;
+        cursor: pointer;
+        // color: $color-background-dark !important;
+
+        &:hover {
+            background: $primary;
+            color: black !important;
+        }
+        // @include mobile() {
+        //     width: 90%;
+        //     margin: 30px auto 0 auto;
+        //     font-size: 1.3rem;
+        //     height: 35px;
+        // }
+    }
+
+    &__wrap {
+        display: flex;
+        padding: 20px 0 40px 0;
+        width:90%;
+        margin:0 auto 20px auto;
+ 
+    }
+
+    &__item {
+        margin: 0 10px;
+        border-radius: 4px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 30px;
+        }
+        &-link {
+            // border: 1px solid $color-background-dark-middle;
+            border-radius: 4px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 700;
+            // color: $color-primary;
+            color: white !important;
+            background: $primary;
+            opacity: 0.4;
+
+
+            &:hover {
+                color: white !important;
+                opacity: 1;
+            }
+
+            &--disabled {
+                pointer-events: none;
+                cursor: default;
+                border: 1px solid grey;
+            }
+            // @include mobile() {
+            //     padding: 8px 13px;
+            //     font-size: 1.3rem;
+            // }
+        }
+
+        &--active {
+            a {
+                opacity: 1;
+                background: $primary !important;
+            }
+        }
+
+    }
+}

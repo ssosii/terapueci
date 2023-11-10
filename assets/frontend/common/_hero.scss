@@ -1,0 +1,65 @@
+@import "/assets/frontend/common/grid";
+@import "/assets/frontend/common/colors";
+
+
+.hero {
+    font-size: 10px;
+    padding: 80px 0;
+    @include md-down {
+      padding: 40px 0;
+      text-align: center;
+    }
+    &--title {
+      font-size: 4.5em;
+      line-height: 4rem;
+      color: $text-blue;
+      font-weight: 700;
+      @include md-down {
+        font-size: 3.5em;
+        line-height: 3rem;
+      }
+      @include sm-down {
+        font-size: 2em;
+        line-height: 1.5rem;
+      }
+    }
+    &--boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include lg-up() {
+        justify-content: space-between;
+      }
+    }
+    &--box {
+      position: relative;
+      flex-basis: 90%;
+      @include md-down {
+        flex-basis: 100%;
+      }
+      .btn--primary {
+        @include md-down {
+          margin: 0 auto;
+        }
+      }
+      @include md-down {
+        margin-bottom: 25px;
+      }
+      @include lg-up() {
+        flex-basis: 40%;
+      }
+    }
+    &--desc {
+      margin: 2rem 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $text-blue;
+      text-align: left;
+      @include md-down {
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }

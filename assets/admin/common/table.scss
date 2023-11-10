@@ -1,0 +1,63 @@
+@import "./colors.scss";
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: $background-intro;
+  color: white;
+}
+
+table td > div {
+  padding: 3px;
+}
+
+table .blue {
+  background-color: #003fe0;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}
+
+table .green {
+  background-color: #25a303;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}
+
+table .red {
+  background-color: #fc0000;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}
+
+table .deleted {
+    background-color: #fce0e1 !important;
+    border: 1px solid #d70105;
+    opacity: 0.8;
+}

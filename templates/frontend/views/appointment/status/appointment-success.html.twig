@@ -1,0 +1,23 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('appointment-info') }}
+{% endblock %}
+{% block body %}
+
+ <div class="appointment-info">
+    <div class="icon">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path d="M16.9999 0.333344C7.79992 0.333344 0.333252 7.80001 0.333252 17C0.333252 26.2 7.79992 33.6667 16.9999 33.6667C26.1999 33.6667 33.6666 26.2 33.6666 17C33.6666 7.80001 26.1999 0.333344 16.9999 0.333344ZM16.9999 30.3333C9.64992 30.3333 3.66659 24.35 3.66659 17C3.66659 9.65001 9.64992 3.66668 16.9999 3.66668C24.3499 3.66668 30.3333 9.65001 30.3333 17C30.3333 24.35 24.3499 30.3333 16.9999 30.3333ZM24.6499 9.63334L13.6666 20.6167L9.34992 16.3167L6.99992 18.6667L13.6666 25.3333L26.9999 12L24.6499 9.63334Z" fill="#3B6A1C"/>
+    </svg>
+    </div>
+    <h2 class="title">Dziękujemy</h2>
+    <p class="description">Twoja płatność powiodła się.
+Czekaj na wiadomość od specjalisty z linkiem do Waszego spotkania.</p>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+		{{ encore_entry_script_tags('appointment-info') }}
+{% endblock %}

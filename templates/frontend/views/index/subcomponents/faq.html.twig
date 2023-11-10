@@ -1,0 +1,31 @@
+<div class="faq">
+
+	<div class="container">
+
+		<div>
+			<div class="main--title --darkBlue --center --big  fadeInTrigger">
+				Najczęściej zadawane pytania (FAQ)</div>
+		</div>
+
+    {% set labelsType = {
+ "psychoterapia": "Psychoterapia", "rodzajewizyt": "Rodzaje wizyt", "techniczne": "Kwestie techniczne",
+} %}
+
+
+      {% for key, list in cmsService.getFaqItems %}
+            <div class='faq--category fadeInTrigger'>{{ labelsType[key] }}</div>
+            {% for item in list %}
+	            <div class="faq--element fadeInTrigger">
+			        <h3 class="faq--title">{{item.title}}</h3>
+			        <p class="faq--text">{{item.value}}</p>
+			        <button class="faq--toggle">
+				        <img src="{{ asset('images/arrow_blue.svg') }}"/>
+			        </button>
+		        </div>
+            {% endfor %}
+    {% endfor %}
+
+
+	</div>
+
+</div>

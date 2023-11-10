@@ -1,0 +1,17 @@
+@import "./../../common/index.scss";
+
+
+.btn--link {
+    @include buttonReset();
+  color: #4259a9;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  padding:10px;
+  border-radius: 2px;
+  &:hover {
+    background-color: #e9edf9;
+  }
+}

@@ -1,0 +1,63 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-index') }}
+
+{% endblock %}
+{% block body %}
+
+	<div class="subpage--intro">
+		<h2 class="title">Lista pacjentów</h2>
+        	<div class="label" style="display:flex;">
+	        {# <a href="{{path('admin_doctor-create')}}"  class="btn--secondary">Dodaj</a> #}
+		</div>
+	</div>
+
+	{% for message in app.flashes('success') %}
+		<div class="toast-success">
+		</div>
+	{% endfor %}
+
+	{% for message in app.flashes('error') %}
+		<div class="toast-error">
+		</div>
+	{% endfor %}
+
+
+
+	<div class="subpage--content">
+		<table>
+			<tr>
+				<th>ID</th>
+	
+				<th>Imię i nazwisko</th>
+				<th>Email</th>
+				<th>Telefon</th>
+				{# <th>Kateogier</th> #}
+	
+					{#<th></th> #}
+			</tr>
+			{% for user in paginate.data %}
+    
+				<tr>
+				<td>{{user.id}}</td>
+	
+					<td>{{user.username}}</td>
+					<td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+
+				</tr>
+			{% endfor %}
+			
+		</table>
+	</div>
+
+
+	{% include 'components/pagination/index.html.twig' with {'paginate': paginate} only %}
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+		{{ encore_entry_script_tags('admin-index') }}
+{% endblock %}

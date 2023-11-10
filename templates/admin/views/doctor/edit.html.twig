@@ -1,0 +1,44 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-index') }}
+
+	{{ encore_entry_link_tags('admin-doctor-edit') }}
+
+{% endblock %}
+{% block body %}
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+	<div class="subpage--intro">
+		<h2 class="title">Edytuj specjalistę</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_doctor')}}"  class="btn--primary">Wróć</a>
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+
+    <div data-id={{doctor.id}} id="editDoctor"></div>
+</div>
+    </div>
+
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+		{{ encore_entry_script_tags('admin-index') }}
+        {{ encore_entry_script_tags('admin-doctor-edit') }}
+{% endblock %}

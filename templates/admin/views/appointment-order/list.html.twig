@@ -1,0 +1,121 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">Wizyty</h2>
+        	<div class="label" style="display:flex;">
+
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+{# {{dump(appointmentOrders)}} #}
+
+	<table>
+			<tr>
+				<th>ID</th>
+				<th>Spotkanie</th>
+				<th>Terapeuta</th>
+                <th>Pacjent</th>
+                <th>Wiadomość</th>
+                <th>Kod promocyjny</th>
+                <th>Płatność</th>
+			</tr>
+		  {% for order in paginate.data %}
+          {{dump(order)}}
+				<tr class="{{order.isDeleted ? "deleted" : ""}}">
+				<td>{{order.id}}</td>
+                <td>
+                    {% if order.masterCategory %}
+                    <div>Rodzaj wizyty: {{order.masterCategory.name }}: {{order.price}} zł</b></div>
+                    {% endif %}
+                    <div>Cena wizyty:  {{order.totalPrice}}   zł</b></div>
+                     <div>Cena przed wykorzystaniem kodu:  {{order.promoCode ? order.price : "--"  }} zł</b></div>
+                    <div>Data spotkania: <b>{{order.selectedDate|date('d-m-Y H:i')}}</b></div>
+                    <div>Data utworzenia: {{order.createdAt|date('d-m-Y H:i')}}</div>
+                  <div>Numer telefonu podany w zamówieniu: {{order.phone}}</div>
+                  {% if order.isDeleted %}
+                  <div class="red">Spotkanie odwołane</div>
+                  {% endif %}
+                    </td>
+                <td>
+                    {% if order.doctor %}
+                    <div class='blue'>{{order.doctor.username}}</div>
+                    <div>{{order.doctor.email}}</div>
+                    <div>{{order.doctor.phone}}</div>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if order.patient %}
+                     <div class='green'><b>{{order.patient.username}}</b></div>
+                    <div>{{order.patient.email}}</div>
+                    <div>{{order.patient.phone}}</div>
+                    {% endif %}
+                </td>  
+                <td>
+        
+                    {{order.message}}
+ 
+
+                </td>
+                <td>
+                       {# $typeCode = $promoCode->getTypeCode();
+            $expirationDate = $promoCode->getExpirationDate();
+            $rangeType = $promoCode->getRangeType();
+            $quota = $promoCode->getQuota();
+            $percent = $promoCode->getPercent();
+            $name = $promoCode->getName(); #}
+
+                    {# {{dump(order.promoCodes)}} #}
+                	{% if order.promoCode %}
+                     <div>Id: {{order.promoCode.id}}</div>
+
+                     <div>Wartość: {{order.promoCode.typeCode =="percent" ? order.promoCode.percent : order.promoCode.quota  }}  {{order.promoCode.typeCode =="percent" ? "%": "zł" }}</div>
+	            {% endif %}
+                </td>  
+
+                <td>
+                	{% if order.payment %}
+                    <div>Id: {{order.payment.id}}</div>
+                
+                    <div>Sesja: {{order.payment.sessionId}}</div>
+                    <div>Cena: {{order.payment.amount/100}} {{order.payment.currency}}</div>
+	            {% endif %}
+                </td>  
+
+				{# <td>
+                <div class="statusSwitcherComponent" data-type="category-active" data-id="{{category.id}}" data-label="Aktywny" data-value="{{category.isActive}}"></div>
+                </td> #}
+				{# <td><a href="{{path('admin_category-edit',{'doctorCategory':category.id})}}" class="btn--primary">Edytuj</a></td> #}
+
+				</tr>
+			{% endfor %}
+			
+		</table>
+
+		{% include 'components/pagination/index.html.twig' with {'paginate': paginate} only %}
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

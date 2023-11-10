@@ -1,0 +1,40 @@
+@use "./../../common/mixins" as *;
+@use "./../../common/colors" as *;
+
+.btn--primary-link {
+  @include buttonReset();
+  border-radius: 3px;
+
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  gap: 10px;
+  cursor: pointer;
+  border: 0;
+  font-weight: 600;
+  width: auto;
+  transition: all 0.4s;
+  padding: 10px 24px;
+  background-color: $primary;
+  color: white;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  &:focus {
+    outline: 0;
+  }
+  &.center {
+    margin: 0 auto;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &:hover {
+    transition: all 0.4s;
+    background-color: $primary-hover;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+}

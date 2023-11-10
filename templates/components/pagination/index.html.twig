@@ -1,0 +1,35 @@
+{% set routeParams = paginate.routeParams %}
+<nav class="pagination fadeInTrigger">
+    <ul class="pagination__wrap">
+        {# <li class="pagination__item">
+            <a class="pagination__item-link {% if paginate.page == 1  %} pagination__item-link--disabled {% endif %}" href="{{ path( app.request.attributes.get('_route'), routeParams|merge({page: paginate.page-1}) ) }}">
+                <span aria-hidden="true">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+            </a>
+        </li> #}
+        {% if paginate.pages > 1 %}
+            {% for  page in 1..paginate.pages %}
+                <li class="pagination__item{% if page == paginate.page %} pagination__item--active{% endif %}">
+                    <a  class="pagination__item-link link" href="{{ path( app.request.attributes.get('_route'), routeParams|merge({page: page}) ) }}">
+                        {{ page }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li class="pagination__item pagination__item--disabled">
+                <a class="pagination__item-link link">
+                    1
+                </a>
+            </li>
+        {% endif %}
+        {# <li class="pagination__item">
+            <a class="pagination__item-link {% if paginate.page == paginate.pages %} pagination__item-link--disabled {% endif %}" href="{{ path( app.request.attributes.get('_route'), routeParams|merge({page: paginate.page+1}) ) }}" aria-label="next">
+                <span aria-hidden="true">
+                    <i class="fas fa-arrow-right"></i>
+                </span>
+            </a>
+        </li> #}
+    </ul>
+</nav>
+

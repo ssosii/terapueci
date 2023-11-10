@@ -1,0 +1,87 @@
+@use "./../../../../../common/colors" as *;
+@use "./../../../../../common/grid" as *;
+
+.preview {
+  margin-top: 30px;
+  width: 40%;
+  @include md-down() {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  > .label {
+    display: flex;
+    margin-bottom: 25px;
+    @media only screen and (max-width: 950px) {
+      display: block;
+    }
+    @include md-down() {
+      display: flex;
+    }
+    > .avatar {
+      margin-right: 20px;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+      }
+    }
+    > .info {
+      width: calc(100% - 160px);
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+      }
+      > .username {
+        font-size: 22px;
+        font-weight: 500;
+      }
+      > .categories {
+        font-size: 14px;
+        color: $primary;
+        // font-weight: 500;
+      }
+    }
+  }
+  > .action {
+    border-radius: 12px;
+    // border: 1px solid #e2e1ec;
+    // background-color: white;
+    // box-shadow: 6px 6px 24px 1px rgba(8, 41, 120, 0.12);
+    padding: 15px;
+    > .item {
+      display: flex;
+      justify-content: space-between;
+    }
+    .button {
+      background-color: $secondary;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.4s;
+
+      &.--center {
+        margin: 0 auto;
+      }
+
+      &.--full-width {
+        width: 100%;
+      }
+
+      &:hover {
+        transition: all 0.4s;
+        background: $secondary-hover;
+      }
+    }
+  }
+}

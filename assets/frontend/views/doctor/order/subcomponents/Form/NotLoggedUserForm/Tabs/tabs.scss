@@ -1,0 +1,54 @@
+@use "./../../../../../../../common/colors" as *;
+
+.tabs--components {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #e3e2e6;
+  margin-bottom:30px;
+  position: relative;
+  transition: all 0.5s;
+  &.--login {
+
+    &:before {
+        transition: all 0.3s;
+        transform: translateX(100%);
+    }
+}
+
+  &:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 50%;
+    background-color: $primary;
+    content: "";
+    transition: all 0.5s;
+  }
+
+
+  > .item {
+    width: 50%;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: $text-blue;
+    }
+   
+    > .text {
+        position: relative;
+    }
+
+    // &.--active {
+    //   color: $text-blue;
+    //   > .text {
+
+    //   }
+    // }
+  }
+}

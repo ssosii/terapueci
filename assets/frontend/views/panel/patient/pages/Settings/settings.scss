@@ -1,0 +1,9 @@
+@use "./../../../../../common/grid" as *;
+
+.settings--components {
+  width: 60%;
+  position:relative;
+  @include md-down {
+    width: 100%;
+  }
+}

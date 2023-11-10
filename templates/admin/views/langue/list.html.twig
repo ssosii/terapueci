@@ -1,0 +1,59 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">Języki</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_langue-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+
+	<table>
+			<tr>
+            	<th>Id</th>
+				<th>Nazwa</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+			{% for langue in langues %}
+				<tr>
+                	<td>{{langue.id}}</td>
+				<td>{{langue.name}}</td>
+				<td>
+                <div class="statusSwitcherComponent" data-type="langue-active" data-id="{{langue.id}}" data-label="Aktywna" data-value="{{langue.isActive}}"></div>
+                </td>
+				<td><a href="{{path('admin_langue-edit',{'langue':langue.id})}}" class="btn--primary">Edytuj</a></td>
+
+				</tr>
+			{% endfor %}
+			
+		</table>
+
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

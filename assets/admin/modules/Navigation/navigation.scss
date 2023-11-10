@@ -1,0 +1,141 @@
+.navigationComponent {
+    height: 100%;
+    min-height: 100%;
+}
+body.-navigation-opened {
+    .navigation--component {
+        left: 0;
+        transition: all 0.5s;
+    }
+}
+
+.navigation--component {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: -220px;
+    width: 220px;
+    height: 100%;
+    min-height: 100%;
+    background: $primary;
+    color: $white;
+    background: $background-light;
+    transition: all 0.5s;
+
+    @include md-up() {
+        position: fixed;
+        left: 0;
+        width: 220px;
+    }
+    @include lg-up() {
+        position: fixed;
+        left: 0;
+        width: 230px;
+        left: 0;
+    }
+}
+.navigation--header {
+    height: 50px;
+    width: 100%;
+    background: $background-dark;
+    position: relative;
+    display: block;
+    > .logo {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        background: $background-light;
+        border-radius: 10px;
+        padding: 20px;
+        img {
+            width: 150px;
+        }
+    }
+    > .close {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        background: $background-light;
+        padding: 8px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        // @include md-up {
+        //     display: none;
+        // }
+        > .icon {
+            width: 10px;
+        }
+    }
+}
+.navigation--list {
+    padding: 40px 0 0 0;
+    overflow-y: auto;
+    @include scrolStyles();
+    height: 100%;
+    min-height: 100%;
+
+    .item {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-decoration: none;
+        padding-left: 26px;
+        cursor: pointer;
+        margin: 0 6px;
+        border-radius: 3px;
+        transition: all 0.5s;
+        display: block;
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0.8;
+
+        &.-single {
+            &.-active {
+                background: $background-light-hover;
+            }
+        }
+
+        &.-active {
+            // background: $background-light-hover;
+            opacity: 1;
+            > .dropicon {
+                transform: rotate(180deg);
+            }
+            .icon {
+                outline: 1px solid red;
+            }
+        }
+        &:hover {
+            background: $background-light-hover;
+            opacity: 1;
+        }
+        > .dropicon {
+            transition: all 0.25s ease-out;
+        }
+    }
+    .subitem {
+        &.-active {
+            background: $background-light-hover;
+        }
+    }
+}
+
+.navigation--list--dropdown {
+    height: 0;
+    opacity: 0;
+    transition: all 0.45s ease-out;
+    overflow: hidden;
+    &.-open {
+        opacity: 1;
+        height: auto;
+        transition: all 0.25s ease-in;
+    }
+    > .item {
+        padding: 10px 20px 10px 35px;
+    }
+}

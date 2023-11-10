@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+    body:{color:black;}
+    
+    </style>
+</head>
+
+	<body>
+
+
+    {% set labelsType = {
+  'terapia-indywidualna':"terapia indywidualna",
+  'interwencja-kryzysowa':"interwencja kryzysowa",
+} %}
+
+{{order.doctor.username}},<br><br>
+masz nową wizytę online.<br><br>
+{{order.patient.username}} zarezerwował_a wizytę online w terminie {{order.selectedDate|date('Y-m-d H:i')}}. Skontaktuj się z
+nim_nią jak najszybciej i wyślij mailem link do Waszego spotkania.<br><br>
+Szczegóły wizyty:<br>
+Data wizyty: {{order.selectedDate|date('Y-m-d H:i')}}<br>
+Imię i nazwisko: {{order.patient.username}}<br>
+E-mail: {{order.patient.email}}<br>
+Numer telefonu: {{order.phone ? order.phone :"Nie podano." }}<br>
+Informacje dla specjalisty: {{order.message ? order.message :"Nie podano." }}<br>
+Rodzaj wizyty: {{order.masterCategory.name}}<br><br>
+
+Pozdrawiamy,:<br>
+W GŁOWIE SIĘ NIE MIEŚCI:<br>
+Centrum Psychoterapii Online
+
+
+
+{# 
+	Mail do specjalisty po zapisie na wizytę (przykładowe dane kursywą)
+Nadawca maila: W głowie się nie mieści | centrum psychoterapii online
+Tytuł maila: Nowa wizyta online
+Treść maila:
+
+Anna,
+masz nową wizytę online.
+Jan Kowalski zarezerwował_a wizytę online w terminie 2023-09-19 o 17:00. Skontaktuj się z
+nim_nią jak najszybciej i wyślij mailem link do Waszego spotkania.
+Szczegóły wizyty:
+Data wizyty: 2023-09-19 17:00
+Imię i nazwisko: Jan Kowalski
+E-mail: jakowalski@kulka.pl
+Numer telefonu: 100 100 100
+Informacje dla specjalisty: treść
+
+Pozdrawiamy,
+W GŁOWIE SIĘ NIE MIEŚCI
+Centrum Psychoterapii Online #}
+
+	</body>
+</html>

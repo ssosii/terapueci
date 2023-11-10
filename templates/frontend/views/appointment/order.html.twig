@@ -1,0 +1,41 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('doctor-order') }}
+{% endblock %}
+{% block body %}
+ {# $appointmentData = [
+            "id" => $appointmentRule->getId(),
+            "dayOfWeek" => $dayOfWeek,
+            "dateString" => $appointmentRule->getStartDate()->format('d.m.Y'),
+            "time" => $date->format('H:i'),
+            "type" => $type,
+            "avatar" => $user->getAvatarUrl()
+        ]; #}
+
+ <div id="doctorOrder" 
+ data-ul="{{ul}}" 
+ data-doctorid="{{doctor.id}}" 
+ data-doctorusername="{{doctor.username}}" 
+  data-doctorslug="{{doctor.slug}}" 
+ data-categoriesstring="{{categoriesstring}}" 
+ data-aid="{{appointment.id}}" 
+ data-adayofweek="{{appointment.dayOfWeek}}" 
+ data-adatestring="{{appointment.dateString}}" 
+ data-atime="{{appointment.time}}" 
+ data-apriceitem="{{appointment.priceItem}}"
+ data-aavatar="{{appointment.avatar}}"
+data-defaultprice="{{defaultPrice}}"
+data-isused="{{appointment.isUsed}}"
+data-priceitemmastercategoryname="{{appointment.priceItemMasterCategoryName}}"
+ >
+ </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('doctor-order') }}
+{% endblock %}

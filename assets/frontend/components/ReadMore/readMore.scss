@@ -1,0 +1,11 @@
+@use "./../../common/colors" as *;
+
+.more {
+  color: $primary;
+  margin-left: 7px;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: $primary-hover;
+  }
+}

@@ -1,0 +1,38 @@
+@use "./../../../../../common/colors" as *;
+
+.preview {
+  margin-top: 30px;
+  > .label {
+    display: flex;
+    > .avatar {
+      margin-right: 20px;
+      position: relative;
+      width: 160px;
+      height: 160px;
+      img {
+        width: 100%;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+    > .info {
+      > .username {
+        font-size: 22px;
+        font-weight: 500;
+      }
+      > .categories {
+        font-size: 14px;
+        color: $primary;
+        // font-weight: 500;
+      }
+    }
+  }
+  > .action {
+    border-radius: 12px;
+    border: 1px solid #e2e1ec;
+    background-color: white;
+    box-shadow: 6px 6px 24px 1px rgba(8, 41, 120, 0.12);
+  }
+}

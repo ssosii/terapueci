@@ -1,0 +1,94 @@
+@use "./../../../../../../../common/colors" as *;
+
+.schedule--component {
+  margin-top: 15px;
+  .schedule--item {
+    display: flex;
+    align-items: stretch;
+    > .date {
+      display: flex;
+      padding: 8px 16px;
+      flex-direction: column;
+      align-items: center;
+      min-width: 60px;
+      > .text {
+        font-size: 22px;
+        font-weight: 500;
+        position: relative;
+        &.--marked {
+          &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $secondary;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            content: "";
+            z-index: -1;
+          }
+        }
+      }
+      > .number {
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+    }
+    // .info {
+    //     margin: 20px auto;
+    //     font-size: 16px;
+    //     font-weight: 500;
+    //     letter-spacing: 0.15px
+    // }
+  }
+  .schedule--list {
+    flex: 1;
+
+    > .term {
+      border-radius: 12px;
+      border: 1px solid #e2e1ec;
+      padding: 10px;
+      display: flex;
+    //   justify-content: space-between;
+      margin-bottom: 15px;
+      position: relative;
+      .deleted-label{
+        position: absolute;
+        top:10px;
+        right:10px;
+        font-size: 10px;
+        color:white;
+        font-weight: 500;
+        background-color: $error;
+        border-radius: 8px;
+        padding:4px 7px;
+
+      }
+      &.--used {
+        background-color: white;
+      }
+      &.--remove {
+        background-color: #fce0e1 !important;
+        border:1px solid $error;
+        opacity:0.8;
+      }
+      > .info {
+        > .time {
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: 0.15px;
+        }
+        > .patient {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.15px;
+        }
+      }
+      .icon {
+        margin-right: 10px;
+      }
+    }
+  }
+}

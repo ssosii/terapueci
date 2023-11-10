@@ -1,0 +1,26 @@
+<div class="except">
+	<div class="container">
+		<div class="main--title --big --darkBlue --center --m600 fadeInTrigger">
+			Czego oczekujemy od Ciebie</div>
+		<div style="margin: 0 auto" class="main--subtitle --m600 --center fadeInTrigger">
+			Zależy nam na najwyższej jakości usług. Dlatego starannie weryfikujemy współpracujących z nami specjalistów.
+
+		</div>
+
+
+		<div class="container">
+
+			<div class="except__elements">
+                {% for  listItem in list %}
+				<div class="except__element  fadeInTrigger">
+					<div class="except__image"><img src="{{ asset('images/checked.svg') }}"/></div>
+					<p>{{listItem.value}}</p>
+				</div>
+                {% endfor %}
+
+
+			</div>
+
+		</div>
+	</div>
+</div>

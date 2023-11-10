@@ -1,0 +1,39 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+{% endblock %}
+{% block body %}
+
+	<div class="container">
+		{% include 'admin/_menu.html.twig' with {'type':'doctor'} %}
+
+		<div class="base">
+			<section>
+				<header>
+					<div class="col">Imię i nazwisko</div>
+					<div class="col">Status</div>
+					<div class="col">Email</div>
+					<div class="col"></div>
+				</header>
+				{% for doctor in doctors %}
+					<div class="row">
+						<div class="col">{{doctor.username}}</div>
+						<div class="col">{{doctor.isActive ? 'Aktywny' : 'Nieaktywny'}}</div>
+						<div class="col">{{doctor.email}}</div>
+						<div class="col">
+							<a class="button-edit" href="{{ path('admin_doctor-edit',{'user': doctor.id}) }}">Edytuj</a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</section>
+		</div>
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{# {{ encore_entry_script_tags('apointment-order') }} #}
+{% endblock %}

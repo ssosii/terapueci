@@ -1,0 +1,75 @@
+{% set user = userService.getUser %}
+<div class="navigation--component">
+	<ul class="navigation--menu">
+
+
+	   {% if is_granted('ROLE_PATIENT') or is_granted('ROLE_DOCTOR') %}
+       <div class="profile-wrap">
+			<a class="profile" href="{{path('panel-patient')}}">
+					<img class="avatar" src="{{userService.getUser.getAvatarUrl}}"/>
+					<div class="username">{{userService.user.username}}</div>
+			</a>
+	
+
+            <a class="profile-logout" href="{{path('app_logout')}}">
+					<svg fill="#1b1b1f" xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24">
+					<path d="M0 0h24v24H0z" fill="none"/><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+			</a>
+
+        </div>
+
+        <div class="break-line"></div>
+
+		{% else  %}
+				<a class="btn--primary --full-width" style="margin-bottom:15px;" href="{{path('app_login-page')}}">Zaloguj się</a>
+				<a class="btn--secondary --full-width" style="margin-bottom:25px;" href="{{path('app_register-page')}}">Założ konto</a>
+		{% endif %}
+
+
+	    <ul class="list">
+			{% include 'frontend/modules/_navigation-links.html.twig' %}
+		</ul>
+
+
+		{# {% if is_granted('ROLE_ADMIN') %}
+			<div data-url="{{path('admin')}}" data-variant="contained" data-color="primary" data-label={{userService.user.username}} class="btn--replace--logged button"></div>
+		{% elseif is_granted('ROLE_USER')  %}
+			<div data-url="{{path('user_profile',{'user':userService.user.id,'slug':userService.user.slug})}}" data-variant="contained" data-color="primary" data-label={{userService.user.username}} class="btn--replace--logged button"></div>
+		{% else  %}
+			<div class="auth"></div>
+		{% endif %}
+		<br />
+		<li class="item">
+			<a class="link" href="{{path('patient')}}">Dla pacjentów</a>
+		</li>
+		<li class="item">
+			<a class="link" href="{{path('donor')}}">Dla darczyńców</a>
+		</li>
+		<li class="item">
+			<a class="link" href="/#o-mnie">O mnie</a>
+		</li>
+		<li class="item">
+			<a class="link" href="/#cennik">Cennik</a>
+		</li>
+		<li class="item">
+			<a class="link" href="{{path('blog')}}">Blog</a>
+		</li>
+		<li class="item -last">
+			<a class="link" href="/#kontakt">Kontakt</a>
+		</li> #}
+
+		<div class="social">
+			{# {% if settingService.getSocial.facebook %}
+				<a target="_blank" class="icon" href="{{settingService.getSocial.facebook}}">
+					<img src="{{ asset('build/images/facebook.svg') }}"/>
+				</a>
+			{% endif %}
+			{% if settingService.getSocial.twitter %}
+				<a target="_blank" class="icon" href="{{settingService.getSocial.twitter}}">
+					<img src="{{ asset('build/images/twitter.svg') }}"/>
+				</a>
+			{% endif %} #}
+		</div>
+
+	</ul>
+</div>

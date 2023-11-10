@@ -1,0 +1,184 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">Kody promocyjne</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_promo-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+
+
+        {# ypeCode, expirationDate: expirationDate.format('YYYY-MM-DD'), rangeType, number, quota, percent, name  #}
+
+	<table>
+			<tr>
+				<th>ID</th>
+                <th>Kod</th>
+				<th>Wartość</th>
+     
+                <th>Pacjent</th>
+                <th>Specjalista</th>
+                <th>Data wygaśnięcia</th>
+                <th>Zamówienie</th>
+                <th>Status</th>
+			</tr>
+		{% for code in paginate.data %}
+			<tr>
+				<td>{{code.id}}</td>
+                <td>{{code.name}}
+                            {# <div>isUsed: {{code.isUsed ? "tak" :"nie"}}</div> #}
+                </td>
+				<td>
+            {% if code.typeCode == 'percent' %}
+                {{code.percent}} %
+ 
+            {% else %}
+                {{code.quota}} zł
+            {% endif %}
+		
+               </td>
+                 {# <td>
+                {% if code.appointmentOrder %}
+                <div>{{code.appointmentOrder.id}}</div>
+                {% if  code.appointmentOrder.masterCategory %}
+                <div>{{ code.appointmentOrder.masterCategory.name }}: {{ code.appointmentOrder.price}} zł</b></div>
+                {% endif %}
+                <div>Data spotkania: <b>{{ code.appointmentOrder.selectedDate|date('d-m-Y H:i')}}</b></div>
+                <div>Data utworzenia: {{ code.appointmentOrder.createdAt|date('d-m-Y H:i')}}</div>
+
+                {% endif %}                       
+                </td> #}
+                <td>
+                {% if  code.appointmentOrder %}
+                     <div class='green'><b>{{ code.appointmentOrder.patient.username}}</b></div>
+                    <div>{{ code.appointmentOrder.patient.email}}</div>
+                    <div>{{ code.appointmentOrder.patient.phone}}</div>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if  code.appointmentOrder %}
+                    <div class='blue'>{{ code.appointmentOrder.doctor.username}}</div>
+                    <div>{{ code.appointmentOrder.doctor.email}}</div>
+                    <div>{{ code.appointmentOrder.doctor.phone}}</div>
+                    {% endif %}
+                </td>
+                <td>
+  
+
+                {% if code.rangeType == "expiration" %}
+                {{ code.expirationDate|date('d-m-Y')}}
+                {% endif %}
+                         
+                </td>
+                <td>
+                    
+                    {% if code.appointmentOrder %}
+                    
+                    <div>Numer zamówienia: {{ code.appointmentOrder.id}}</div>
+
+
+                    {% endif %}
+
+
+	{# <td>{{order.id}}</td>
+                <td>
+                    {% if order.masterCategory %}
+                    <div>{{order.masterCategory.name }}: {{order.price}} zł</b></div>
+                    {% endif %}
+                    <div>Data spotkania: <b>{{order.selectedDate|date('d-m-Y H:i')}}</b></div>
+                    <div>Data utworzenia: {{order.createdAt|date('d-m-Y H:i')}}</div>
+                  <div>Numer telefonu podany w zamówieniu: {{order.phone}}</div>
+                    </td>
+                <td>
+                    {% if order.doctor %}
+                    <div class='blue'>{{order.doctor.username}}</div>
+                    <div>{{order.doctor.email}}</div>
+                    <div>{{order.doctor.phone}}</div>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if order.patient %}
+                     <div class='green'><b>{{order.patient.username}}</b></div>
+                    <div>{{order.patient.email}}</div>
+                    <div>{{order.patient.phone}}</div>
+                    {% endif %}
+                </td>   #}
+
+
+
+
+
+                </td>
+			    <td>
+                             {% if not code.appointmentOrder %}
+                <div class="statusSwitcherComponent" data-type="promo-active" data-id="{{code.id}}" data-label="Aktywny" data-value="{{code.isActive}}"></div>
+                       {% endif %}
+                </td>
+
+	     </tr>
+    {% endfor %}
+		</table>
+
+	{% include 'components/pagination/index.html.twig' with {'paginate': paginate} only %}
+
+{# 
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="alert alert-error">
+				{{ message }}
+			</div>
+		{% endfor %}
+		<div class="base">
+			<section>
+				<header>
+					<div class="col">Nazwa</div>
+					<div class="col">Status</div>
+					<div class="col"></div>
+				</header>
+				{% for category in categories %}
+					<div class="row">
+						<div class="col">{{category.name}}</div>
+						<div class="col">{{category.isActive ? 'Aktywna' : 'Nieaktywna'}}</div>
+						<div class="col">
+							<a class="button-edit" href="{{ path('admin_category-edit',{'doctorCategory': category.id}) }}">Edytuj</a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</section>
+		</div> #}
+
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

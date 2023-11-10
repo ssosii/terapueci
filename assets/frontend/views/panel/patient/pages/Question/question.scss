@@ -1,0 +1,9 @@
+@use "./../../../../../common/grid" as *;
+
+  .question--component {
+    width: 60%;
+    @include md-down {
+      width: 100%;
+    }
+  }
+  

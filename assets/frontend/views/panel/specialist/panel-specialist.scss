@@ -1,0 +1,38 @@
+@use "./../../../common/mixins" as *;
+@use "./../../../common/grid" as *;
+
+.page--container {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0 auto;
+//   outline: 1px solid green;
+  //   outline: 1px solid red;
+  @include md-down {
+    flex-direction: column;
+    margin: 40px auto 0 auto;
+  }
+
+  @media screen and (max-width: 1500px) {
+  }
+
+  > .content {
+    width: calc(100% - 280px);
+
+    @media screen and (max-width: 1050px) {
+    width: calc(100% - 290px);
+    }
+
+    @include md-down {
+        width: 100%;
+    }
+  }
+  > .menu {
+    width: 270px;
+    @media screen and (max-width: 1050px) {
+        width: 280px;
+    }
+    @include md-down {
+        width: 100%;
+    }
+  }
+}

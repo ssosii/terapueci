@@ -1,0 +1,283 @@
+{
+  "entrypoints": {
+    "common": {
+      "js": [
+        "/build/runtime.js",
+        "/build/common.js"
+      ],
+      "css": [
+        "/build/common.css"
+      ]
+    },
+    "index": {
+      "js": [
+        "/build/runtime.js",
+        "/build/index.js"
+      ],
+      "css": [
+        "/build/index.css"
+      ]
+    },
+    "auth": {
+      "js": [
+        "/build/runtime.js",
+        "/build/auth.js"
+      ],
+      "css": [
+        "/build/auth.css"
+      ]
+    },
+    "appointment-info": {
+      "js": [
+        "/build/runtime.js",
+        "/build/appointment-info.js"
+      ],
+      "css": [
+        "/build/appointment-info.css"
+      ]
+    },
+    "pages-work-with-us": {
+      "js": [
+        "/build/runtime.js",
+        "/build/pages-work-with-us.js"
+      ],
+      "css": [
+        "/build/pages-work-with-us.css"
+      ]
+    },
+    "appointment-order": {
+      "js": [
+        "/build/runtime.js",
+        "/build/appointment-order.js"
+      ],
+      "css": [
+        "/build/appointment-order.css"
+      ]
+    },
+    "panel-specialist": {
+      "js": [
+        "/build/runtime.js",
+        "/build/panel-specialist.js"
+      ],
+      "css": [
+        "/build/panel-specialist.css"
+      ]
+    },
+    "panel-patient": {
+      "js": [
+        "/build/runtime.js",
+        "/build/panel-patient.js"
+      ],
+      "css": [
+        "/build/panel-patient.css"
+      ]
+    },
+    "patient-profile": {
+      "js": [
+        "/build/runtime.js",
+        "/build/patient-profile.js"
+      ],
+      "css": [
+        "/build/patient-profile.css"
+      ]
+    },
+    "doctor-order": {
+      "js": [
+        "/build/runtime.js",
+        "/build/doctor-order.js"
+      ],
+      "css": [
+        "/build/doctor-order.css"
+      ]
+    },
+    "doctor-list": {
+      "js": [
+        "/build/runtime.js",
+        "/build/doctor-list.js"
+      ],
+      "css": [
+        "/build/doctor-list.css"
+      ]
+    },
+    "pages": {
+      "js": [
+        "/build/runtime.js",
+        "/build/pages.js"
+      ],
+      "css": [
+        "/build/pages.css"
+      ]
+    },
+    "pages-faq": {
+      "js": [
+        "/build/runtime.js",
+        "/build/pages-faq.js"
+      ],
+      "css": [
+        "/build/pages-faq.css"
+      ]
+    },
+    "admin-common": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-common.js"
+      ],
+      "css": [
+        "/build/admin-common.css"
+      ]
+    },
+    "admin-index": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-index.js"
+      ],
+      "css": [
+        "/build/admin-index.css"
+      ]
+    },
+    "admin-list": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-list.js"
+      ],
+      "css": [
+        "/build/admin-list.css"
+      ]
+    },
+    "admin-doctor-edit": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-doctor-edit.js"
+      ],
+      "css": [
+        "/build/admin-doctor-edit.css"
+      ]
+    },
+    "admin-promo-code-create": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-promo-code-create.js"
+      ],
+      "css": [
+        "/build/admin-promo-code-create.css"
+      ]
+    },
+    "admin-create-doctor": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-create-doctor.js"
+      ],
+      "css": [
+        "/build/admin-create-doctor.css"
+      ]
+    },
+    "admin-edit-doctor": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-edit-doctor.js"
+      ],
+      "css": [
+        "/build/admin-edit-doctor.css"
+      ]
+    },
+    "admin-create-promo-code": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-create-promo-code.js"
+      ],
+      "css": [
+        "/build/admin-create-promo-code.css"
+      ]
+    },
+    "admin-create-category": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-create-category.js"
+      ],
+      "css": [
+        "/build/admin-create-category.css"
+      ]
+    },
+    "admin-edit-category": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-edit-category.js"
+      ],
+      "css": [
+        "/build/admin-edit-category.css"
+      ]
+    },
+    "admin-langue-create": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-langue-create.js"
+      ],
+      "css": [
+        "/build/admin-langue-create.css"
+      ]
+    },
+    "admin-langue-edit": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-langue-edit.js"
+      ],
+      "css": [
+        "/build/admin-langue-edit.css"
+      ]
+    },
+    "admin-cms-homepage": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-cms-homepage.js"
+      ],
+      "css": [
+        "/build/admin-cms-homepage.css"
+      ]
+    },
+    "admin-cms-work-with-us": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-cms-work-with-us.js"
+      ],
+      "css": [
+        "/build/admin-cms-work-with-us.css"
+      ]
+    },
+    "admin-cms-for-company": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-cms-for-company.js"
+      ],
+      "css": [
+        "/build/admin-cms-for-company.css"
+      ]
+    },
+    "admin-cms-pricing": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-cms-pricing.js"
+      ],
+      "css": [
+        "/build/admin-cms-pricing.css"
+      ]
+    },
+    "admin-cms-faq": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-cms-faq.js"
+      ],
+      "css": [
+        "/build/admin-cms-faq.css"
+      ]
+    },
+    "admin-newsletter": {
+      "js": [
+        "/build/runtime.js",
+        "/build/admin-newsletter.js"
+      ],
+      "css": [
+        "/build/admin-newsletter.css"
+      ]
+    }
+  }
+}

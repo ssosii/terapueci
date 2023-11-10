@@ -1,0 +1,49 @@
+###> symfony/framework-bundle ###
+/awstats/
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/public/lista.xlsx
+/var/
+/vendor/
+/migration/*
+
+/public/upload/avatar/*
+/public/upload/education/*
+/public/upload/page/*
+/public/upload/task/*
+/public/upload/movies/*
+/public/upload/photo/*
+/public/upload/common/*
+/public/upload/movies-advice/*
+/public/upload/image-advice/*
+/public/upload/reward/*
+/public/upload/target/*
+/public/upload/library/*
+/public/upload/blog/*
+/public/upload/temponary-file/*
+
+###< symfony/framework-bundle ###
+
+# composer.lock
+yarn.lock
+# symfony.lock
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('admin-common') }}
+			{# {{ encore_entry_link_tags('app') }} #}
+		{% endblock %}
+
+	</head>
+	{% set currentPath =  path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
+	{% set routeClass =  routeService.prepareBodyClassesFromRoute(app.request.attributes.get('_route')) %}
+
+	<body class="{{routeClass}}">
+		<div class="toastComponent"></div>
+		{# <div class="loader--component">
+			<div class="gooey">
+				<span class="dot"></span>
+				<div class="dots">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div> #}
+
+		<div class="main-wrapper">
+			<div class="bar">
+				{% include 'admin/modules/navigation.html.twig' %}
+			</div>
+			<div class="content">
+				{% include 'admin/modules/header.html.twig' %}
+				{% block body %}{% endblock %}
+			</div>
+		</div>
+		{% include 'admin/modules/footer.html.twig' %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('admin-common') }}
+		{% endblock %}
+		{# <link rel="stylesheet" href="{{ routeService.getDomainUrl }}/admin-ckeditor.css"> #}
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('index') }}
+{% endblock %}
+{% block body %}
+
+	{% include '/frontend/views/index/subcomponents/hero.html.twig'  with {'cms':cms}  %}
+	{% include '/frontend/views/index/subcomponents/advantages.html.twig'  with {'cms':cms}  %}
+	{% include '/frontend/views/index/subcomponents/find.html.twig' with {'doctorsToSLider':doctorsToSLider,'cms':cms}  %}
+	{% include '/frontend/views/index/subcomponents/offer.html.twig'  with {'cms':cms}  %}
+
+	{% include '/frontend/views/index/subcomponents/effect.html.twig'  with {'cms':cms}  %}
+	{# {% include '/frontend/views/index/subcomponents/faq.html.twig'  with {'cms':cms}  %} #}
+
+    <div id="faq" class="fadeInTrigger" data-homepage="1"></div>
+
+	{% include '/frontend/views/index/subcomponents/crisis.html.twig'  with {'cms':cms}  %}
+
+	{% include '/frontend/views/index/subcomponents/newsletter.html.twig'  with {'cms':cms}  %}
+
+
+{% endblock %}
+	{% block javascripts %}
+	{{ parent() }}
+{{ encore_entry_script_tags('index') }}{% endblock %}

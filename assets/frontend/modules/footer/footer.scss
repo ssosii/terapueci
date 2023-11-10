@@ -1,0 +1,50 @@
+@use "./../../common/colors.scss" as *;
+@use "./../../common/grid.scss" as *;
+
+.footer {
+  padding-bottom: 40px !important;
+  .main--line {
+    margin: 40px 0;
+  }
+
+  &--container {
+    color: $text-blue;
+    font-size: 14px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    @include sm-up() {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    @include md-up() {
+      flex-direction: row;
+      display: flex;
+      
+    }
+  }
+  &--element {
+    color: #00164f;
+    font-size: 14px;
+    margin-bottom: 20px;
+    .title {
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .li {
+    }
+  }
+  //   &--copyright {
+  //     padding: 20px 0;
+  //     text-align: center;
+  //   }
+}

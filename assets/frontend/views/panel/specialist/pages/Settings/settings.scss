@@ -1,0 +1,8 @@
+@use "./../../../../../common/grid.scss" as *;
+
+.settings--components {
+  width: 60%;
+  @include md-down {
+    width: 100%;
+  }
+}

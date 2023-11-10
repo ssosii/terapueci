@@ -1,0 +1,32 @@
+@use "./../../../../../common/grid" as *;
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 1050px) {
+  flex-direction: column-reverse;
+  }
+}
+.list {
+  width: calc(100% - 370px);
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+  }
+  //   outline:1px solid red;
+}
+
+.calendar {
+  width: 350px;
+  @media screen and (max-width: 1050px) {
+    display:none;
+  }
+  //   outline:1px solid yellow;
+}
+
+
+.mobile-add-appointment {
+    display:none;
+    @media screen and (max-width: 1050px) {
+        display:block;
+      }
+}

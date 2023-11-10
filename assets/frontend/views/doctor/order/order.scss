@@ -1,0 +1,30 @@
+@use "./../../../common/grid" as *;
+
+.profile--container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  @include xl-down() {
+    margin-top: 40px;
+  }
+  @include md-down() {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  > .form {
+    width: 100%;
+    padding: 20px;
+    width: 40%;
+    @include xl-down() {
+      width: 55%;
+    }
+    @include md-down() {
+      width: 100%;
+    }
+    .inner {
+      background: white;
+      //   padding: 24px;
+      border-radius: 20px;
+    }
+  }
+}

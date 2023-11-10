@@ -1,0 +1,79 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+
+{% set label = {
+  'problem':"Obszary wsparcia",
+  'specialization':"Specjalizacja",
+  'service':"Rodzaj wizyty",
+}
+%}
+
+    <div class="subpage--intro">
+		<h2 class="title">Kategorie</h2>
+        	<div class="label" style="display:flex;">
+	 
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+
+
+     
+			{% for key,categories in categoriesList %}
+            <div style="display:flex;justify-content:space-between; align-items:center;">
+            <div style="margin-top:30px; margin-bottom:20px; font-weight:bold; font-size:15px;">{{label[key]}}</div>
+            <div>
+            <a href="{{path('admin_category-create',{'type':key})}}"  class="btn--secondary">Dodaj</a>
+            </div>
+            
+            </div>
+            <table>
+			            <tr>
+				        <th style="width:70%">Nazwa</th>
+				        <th>Status</th>
+				        <th></th>
+			            </tr>
+                {% for category in categories %}       
+				        <tr>
+				        <td>{{category.name}}</td>
+				        <td>
+                            <div class="statusSwitcherComponent" data-type="category-active" data-id="{{category.id}}" data-label="Aktywny" data-value="{{category.isActive}}"></div>
+                        </td>
+				        <td><a href="{{path('admin_category-edit',{'doctorCategory':category.id})}}" class="btn--primary">Edytuj</a></td>
+			            </tr>
+
+                 {% endfor %} 
+
+               </table>
+          
+			{% endfor %}
+			
+
+
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

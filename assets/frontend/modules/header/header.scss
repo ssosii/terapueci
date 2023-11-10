@@ -1,0 +1,101 @@
+@import "./../../common/colors.scss";
+@import "./../../common/variables.scss";
+@import "./../../common/grid.scss";
+.header--component {
+  background: transparent;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  .logo-wrap {
+    img {
+      width: 139px;
+    }
+  }
+}
+
+.header--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative;
+}
+
+.header--scroll {
+  background-color: white;
+  border-bottom: 1px solid $primary;
+}
+
+.header--menu {
+  display: none;
+  @media only screen and (min-width: 840px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > * {
+    padding: 10px;
+
+    > * {
+      font-weight: 600;
+    }
+  }
+}
+
+.header--action {
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 840px) {
+    display: none;
+  }
+  > * {
+    margin-right: 8px;
+    &:last-child() {
+      margin-right: 0;
+    }
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    background: white;
+    outline: 1px solid #e2e1ec;
+    padding: 2px 10px;
+    border-radius: 100px;
+    text-decoration: none;
+    > .avatar-wrap {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      > .avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+    }
+
+    > .username {
+      color: $text;
+      text-decoration: none;
+      font-size: 13;
+    }
+  }
+  > .logout {
+    margin-top: 5px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

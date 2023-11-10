@@ -1,0 +1,67 @@
+@use "./../common/mixins.scss" as *;
+
+.reverse--gradient {
+    @include gradientMain();
+}
+.subpage--section {
+    overflow-x: hidden;
+}
+.subpage--content--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    > .content {
+        width: 95%;
+        background: #ffffff;
+        margin: 2rem 0;
+        padding: 5px;
+        width: 95%;
+        position: relative;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        padding: 10px;
+        border-radius: 0.5rem;
+        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+        &.-small {
+            max-width: 600px;
+        }
+    }
+}
+
+.subpage--content--body {
+    position: relative;
+    // background: #195ede;
+    padding: 20px 30px 20px 30px;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    > .title {
+        color: $yellow;
+        margin-bottom: 40px;
+    }
+    > .info {
+        margin-bottom: 40px;
+        .yellow {
+            color: $yellow;
+        }
+    }
+    > .error {
+        text-align: center;
+        margin-bottom: 15px;
+        color: $red;
+    }
+    > .success {
+        text-align: center;
+        margin-bottom: 15px;
+        color: $success;
+    }
+    > .wrap {
+        width: 90%;
+        margin: 0 auto;
+        .button {
+            margin-bottom: 20px;
+        }
+    }
+}

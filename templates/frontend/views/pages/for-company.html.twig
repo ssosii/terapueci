@@ -1,0 +1,17 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('pages-work-with-us') }}
+{% endblock %}
+{% block body %}
+
+
+	{% include '/frontend/views/pages/for-company/hero.html.twig' with {'cms':cms}  %}
+    {% include '/frontend/views/pages/for-company/offer.html.twig' with {'cms':cms}  %}
+	{% include '/frontend/views/pages/for-company/except.html.twig' with {'cms':cms,'list':list}  %}
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('pages-work-with-us') }}
+{% endblock %}

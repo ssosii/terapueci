@@ -1,0 +1,108 @@
+// Small devices (landscape phones, 340px and up)
+@mixin xs-up() {
+    @media screen and (min-width: 340px) {
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin sm-up() {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+// Medium devices (tablets, 768px and up)
+@mixin md-up() {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+// Large devices (desktops, 992px and up)
+@mixin lg-up() {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+// X-Large devices (large desktops, 1200px and up)
+@mixin xl-up() {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin xxl-up() {
+    @media screen and (min-width: 1400px) {
+        @content;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin xxl-up() {
+    @media screen and (min-width: 1560px) {
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 340px and up)
+@mixin xs-down() {
+    @media screen and (max-width: 340px) {
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin sm-down() {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+// Medium devices (tablets, 768px and up)
+@mixin md-down() {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+// Large devices (desktops, 992px and up)
+@mixin lg-down() {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+// X-Large devices (large desktops, 1200px and up)
+@mixin xl-down() {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin xxl-donw() {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+
+.container {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    &.-main {
+        margin-top: 70px;
+        @include md-up(){
+            margin-top: 90px;
+        }
+    }
+    @include md-up() {
+        padding: 0 25px;
+    }
+}
+
+.md-up-display {
+    display:none;
+    @include md-up() {
+        display:inline;
+    }
+}

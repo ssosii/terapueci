@@ -1,0 +1,46 @@
+@use "./../../../../../common/colors.scss" as *;
+@use "./../../../../../common/grid.scss" as *;
+
+.menu--mobile--component {
+
+  display: none;
+  @include md-down() {
+    display: block;
+  }
+}
+
+.menu--mobile--modal {
+    margin-top: 40px;
+}
+
+.menu--mobile--item {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: all 0.3s;
+  margin-bottom: 4px;
+  &:hover {
+    background: $secondary;
+  }
+  &.--active {
+    background: $secondary;
+  }
+  &.--preview {
+    outline: 1px solid $text;
+    margin-bottom: 20px;
+  }
+}
+
+.menu--mobile--icon {
+  width: 74px;
+  margin-right: 10px;
+}
+
+.menu--mobile--text {
+  font-weight: 600;
+  color: $text-grey;
+  font-size: 14px;
+  margin-left: 10px;
+}

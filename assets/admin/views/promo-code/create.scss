@@ -1,0 +1,21 @@
+@import "./../../common/index.scss";
+
+@import "../../modules/Navigation/navigation.scss";
+
+.button--wrapper {
+    display:flex;
+    margin-top: 3px;
+}
+
+.button {
+    padding:6px;
+    background-color: $background-content;
+    cursor:pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 13px;
+    &.--active {
+        background-color: $primary;
+        color:white;
+    }
+}

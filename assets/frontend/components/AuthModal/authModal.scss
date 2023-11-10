@@ -1,0 +1,88 @@
+@use "./../../common/colors.scss" as *;
+@use "./../../common/grid.scss" as *;
+
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  z-index: 100;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  .title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 19px;
+  }
+
+  .content {
+    max-width: 700px;
+    width:100%;
+    padding: 20px 8px 47px 8px;
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    z-index: 1;
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  //   @include md-up() {
+  //     padding: 40px 20px 30px 20px;
+  //   }
+
+  //   > .alert {
+  //     padding: 0px 16px;
+  //     font-size: 12px;
+  //     margin: 0 0 25px 0;
+  //     margin-top: -10px;
+  //   }
+  //   > .title {
+  //     text-align: center;
+  //     font-weight: 600;
+  //     font-size: 25px;
+  //     margin-bottom: 30px;
+  //   }
+  //   .close {
+  //     position: absolute;
+  //     top: 15px;
+  //     right: 15px;
+  //     display: inline-block;
+  //   }
+  //   .functional {
+  //     position: absolute;
+  //     bottom: 7px;
+  //     right: 7px;
+  //     @include md-up() {
+  //       bottom: 17px;
+  //       right: 25px;
+  //     }
+  //     font-size: 12px;
+  //     color: $primary;
+  //     cursor: pointer;
+  //     &:hover {
+  //       color: $primary-hover;
+  //     }
+  //   }
+  //   .button {
+  //     outline: 5px solid red;
+  //   }
+}

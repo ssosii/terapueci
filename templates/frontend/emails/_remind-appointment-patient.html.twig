@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+    body:{color:black;}
+    
+    </style>
+</head>
+
+
+    {% set labelsType = {
+  'terapia-indywidualna':"terapia indywidualna",
+  'interwencja-kryzysowa':"interwencja kryzysowa",
+} %}
+
+<body>
+
+
+
+{{order.patient.username}},<br>
+przypominamy Ci o jutrzejszej wizycie online ({{order.selectedDate|date('Y-m-d')}}) o {{order.selectedDate|date('H:i')}}.<br><br>
+Szczegóły wizyty:<br>
+Data wizyty: {{order.selectedDate|date('Y-m-d H:i')}}<br>
+Imię i nazwisko terapeuty_tki: {{order.doctor.username}}<br>
+E-mail terapeuty_tki: {{order.doctor.email}}<br>
+Telefon terapeuty_tki: {{order.doctor.phone ? order.doctor.phone : '--'}}<br>
+Rodzaj wizyty: {{order.masterCategory.name}}<br><br>
+
+
+Pozdrawiamy,<br>
+W GŁOWIE SIĘ NIE MIEŚCI<br>
+Centrum Psychoterapii Online<br>
+
+
+	</body>
+</html>

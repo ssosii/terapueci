@@ -1,0 +1,9 @@
+@use "./../../../../../common/grid" as *;
+.features-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  @include md-down {
+    flex-wrap: wrap;
+  }
+}

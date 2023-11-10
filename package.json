@@ -1,0 +1,52 @@
+{
+    "devDependencies": {
+        "@babel/plugin-transform-react-jsx": "^7.13.12",
+        "@symfony/webpack-encore": "^1.0.0",
+        "core-js": "^3.0.0",
+        "file-loader": "^6.2.0",
+        "postcss-loader": "^5.3.0",
+        "regenerator-runtime": "^0.13.2",
+        "sass": "^1.63.6",
+        "sass-loader": "^12.6.0",
+        "webpack-notifier": "^1.6.0"
+    },
+    "dependencies": {
+        "@babel/preset-react": "^7.13.13",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.14.9",
+        "@mui/material": "^5.14.8",
+        "@mui/styles": "^5.14.12",
+        "@mui/x-date-pickers": "^6.13.0",
+        "@react-oauth/google": "^0.11.1",
+        "axios": "^1.4.0",
+        "boostrap": "^2.0.0",
+        "dayjs": "^1.11.9",
+        "formik": "^2.4.3",
+        "i": "^0.3.7",
+        "jwt-decode": "^3.1.2",
+        "lodash.debounce": "^4.0.8",
+        "moment": "^2.29.4",
+        "nanoid": "^5.0.1",
+        "npm": "^10.1.0",
+        "preact": "^10.16.0",
+        "react": "^18.2.0",
+        "react-calendar": "^4.6.0",
+        "react-facebook-login": "^4.1.1",
+        "react-google-login": "^5.2.2",
+        "react-infinite-scroller": "^1.2.6",
+        "react-query": "^3.39.3",
+        "react-toastify": "^9.1.3",
+        "swiper": "^10.3.1",
+        "use-debounce": "^9.0.4",
+        "yup": "^1.2.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    }
+}

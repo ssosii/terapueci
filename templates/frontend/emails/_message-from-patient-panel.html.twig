@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+    body:{color:black;}
+    
+    </style>
+</head>
+
+<body>
+
+
+Wiadomość od użytkownika:<br>
+Id: {{patient.id}}<br>
+Imię: {{patient.username}}<br>
+Email: {{patient.email}}<br>
+Telefon: {{patient.phone ? patient.phone : "--"}}<br><br>
+
+Temat: {{topic ? topic : "--"}}<br>
+Treść wiadomości: {{message ? message : "--"}}<br><br>
+
+
+
+	</body>
+</html>

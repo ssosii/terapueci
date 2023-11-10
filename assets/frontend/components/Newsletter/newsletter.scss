@@ -1,0 +1,39 @@
+@use "./../../common/colors" as *;
+@use "./../../common/grid" as *;
+
+.newsletter--component {
+  display: flex;
+  justify-content: space-around;
+  margin: 90px auto;
+  max-width: 1000px;
+  @include md-down {
+    display: block;
+    margin: 40px auto;
+  }
+  > .section {
+    width: 46%;
+    @include md-down {
+      width: 100%;
+    }
+  }
+  > .label {
+    > .title {
+    //   font-size: 28px;
+    //   font-weight: 700;
+      margin-bottom: 20px;
+      color: #00164f;
+    }
+    > .description {
+      font-size: 16px;
+      color: #00164f;
+    }
+  }
+  > .form {
+    .username-field {
+      max-width: 250px;
+      @include md-down {
+        max-width: 100%;
+      }
+    }
+  }
+}

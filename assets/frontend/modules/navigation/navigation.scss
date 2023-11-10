@@ -1,0 +1,125 @@
+@use "./../../common/colors.scss" as *;
+@use "./../../common/variables.scss" as *;
+@use "./../../common/grid.scss" as *;
+
+
+body._navigation-opened {
+    .navigation--component {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.navigation--component {
+    position: fixed;
+    top: 0;
+    right: -800px;
+    width: 100%;
+    transition: right 0.5s;
+    background:  white;
+    z-index: 2;
+    height: 100%;
+
+    @media only screen and (min-width: 840px) {
+        display:none !important;
+    }
+}
+
+.navigation--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto 0 auto;
+    min-width: 70%;
+    max-width: 400px;
+    height: 100%;
+
+    @include lg-up() {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin: 0;
+        min-width: unset;
+        max-width: unset;
+        justify-content: unset;
+    }
+    .profile-wrap {
+        display:flex;
+        align-items: center;
+        // margin-bottom: 40px;
+    }
+    .profile {
+        display:flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        background: white;
+        outline: 1px solid #e2e1ec;
+        padding: 4px 10px;
+        border-radius: 100px;
+        text-decoration: none;
+        >.avatar{
+            height: 40px;
+            width:40px;
+            border-radius: 50%;
+            margin-right:2px;
+        }
+        >.username {
+            font-size: 17px;
+            color:$text;
+        }
+    }
+    .profile-logout {
+        margin-top: 4px;
+        margin-left: 8px;
+        // outline: 1px solid #e2e1ec;
+        // border-radius: 100px;
+        // padding: 4px 10px;
+    }
+    .break-line {
+        height:1px;
+        width:80px;
+        margin:40px auto;
+        background-color: $text;
+    }
+    .item {
+        padding: 5px;
+        text-align: center;
+     
+        @include md-up() {
+            padding: 0 10px;
+            margin-bottom: 16px;
+        }
+        @include lg-up() {
+            margin: 0;
+        }
+
+        &.-last {
+            // a {
+            margin-bottom: 0;
+            // }
+        }
+       > * {
+            display: inline-flex;
+            color: $primary;
+            font-size: 19px;
+            font-weight: bold;
+            white-space: nowrap;
+     
+            @include md-up() {
+                font-size: 23px;
+            }
+
+        }
+    }
+}

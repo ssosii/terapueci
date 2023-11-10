@@ -1,0 +1,44 @@
+@import "./../../common/index.scss";
+
+.status--switcher {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    > .title {
+        margin-right: 0.5rem;
+    }
+}
+
+.status--content {
+    display: flex;
+    > .item {
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: all 0.3s;
+        display: none;
+        &.-active {
+            opacity: 1;
+            display: block;
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &.-accept {
+            margin-right: 5px;
+            > .icon {
+                color: $success;
+            }
+        }
+        &.-reject {
+            > .icon {
+                color: $error;
+            }
+        }
+        > .icon {
+            font-size: 2rem;
+        }
+    }
+}

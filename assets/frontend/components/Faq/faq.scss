@@ -1,0 +1,85 @@
+@import "./../../common/colors";
+.faq {
+    font-size: 10px;
+    padding: 80px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    &--category {
+        color: $text-blue;
+        font-size: 18px;
+        padding-bottom:10px;
+        margin-bottom:20px;
+        border-bottom: 1px solid $text-blue;
+        font-weight: bold;
+        margin-top:40px;
+      }
+    &--element {
+      background: transparent;
+      border: 1px solid #9fa4a8;
+      border-radius: 12px;
+      margin: 20px 0;
+      padding: 8px 12px 8px 16px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+    &--element.active {
+      background: white;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    &--title {
+      margin: 0 35px 0 0;
+      font-size: 16px;
+      color: $text-blue;
+      font-weight: 500;
+      cursor:pointer;
+    }
+    &--text {
+      display: none;
+      margin: 10px 0 5px 0;
+      font-size: 14px;
+      color: $text-blue;
+      white-space: pre-line
+    }
+    &--element.hide {
+        display: none;
+        outline:1px solid red;
+      }
+    &--element.active .faq-text {
+      display: block;
+    }
+    &--toggle {
+      background: transparent;
+      cursor: pointer;
+      border: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 0;
+      position: absolute;
+      top: 7px;
+      right: 30px;
+      height: 30px;
+      width: 30px;
+      transition: display 2s ease-in;
+      transform: rotate(180deg);
+    }
+  }
+  
+  .faq .faq--toggle:focus {
+    outline: 0;
+  }
+  
+  .faq--element.active .faq--toggle .fa-chevron-down {
+    display: none;
+  }
+  
+  .faq--element.active .faq--toggle {
+    transform: rotate(0);
+  }
+  
+  .faq--element.active .faq--text {
+    display: block;
+  }

@@ -1,0 +1,8 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+         userService: '@App\Service\UserService'
+         routeService: '@App\Service\RouteService'
+         settingService: '@App\Service\SettingService'
+         categoryService: '@App\Service\DoctorService'
+         cmsService: '@App\Service\CmsService'

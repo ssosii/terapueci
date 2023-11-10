@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+		<title>
+			{% block title %}
+            W głowie się nie mieści
+				{# {{page is defined and page is not null ? page.metaTitle : ""}} #}
+			{% endblock %}
+		</title>
+
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ url('index') }}/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url('index') }}/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url('index') }}/favicon/favicon-16x16.png">
+		<link rel="manifest" href="{{ url('index') }}/favicon/site.webmanifest">
+		<link
+		rel="mask-icon" href="{{ url('index') }}/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		{# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+				 #}
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		{# <meta name="description" content="{{page is defined and page is not null ? page.metaDescription : ""}}"> #}
+        <meta name="description" content="Portal poświęcony zdrowiu psychicznemu.">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<meta property="og:url" content="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}"/>
+		<meta property="og:type" content="website"/>
+		{# <meta property="og:title" content="{{page is defined and page is not null ? page.metaTitleFacebook : ""}}"/>
+		<meta
+		property="og:description" content="{{page is defined and page is not null ? page.metaDescriptionFacebook : ""}}"/> #}
+		{# {% if page is defined and page is not null and page.fileName %}
+																											<meta property="og:image" content="{{page.fileUrl}}"/>
+																										{% endif %} #}
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('common') }}
+		{% endblock %}
+
+
+	</head>
+	{% set routeClass =  routeService.prepareBodyClassesFromRoute(app.request.attributes.get('_route')) %}
+{% set currentRoute = app.request.attributes.get('_route') %}
+
+
+	<body class="{{routeClass ? "_" ~ routeClass : ""}} _guard">
+		<div class="toastComponent"></div>
+
+		{% include 'frontend/modules/header/index.html.twig' %}
+
+		{% include 'frontend/modules/navigation/index.html.twig' %}
+        <div id="contactModal"></div>
+																					
+		<div class="body-wrapper"> {% block body %}{% endblock %}
+			</div>
+            {% if currentRoute != "app_login-page" and currentRoute != "app_register-page" %}
+			{% include 'frontend/modules/footer/index.html.twig' %}
+            {% endif %}
+			{% block javascripts %}
+				{{ encore_entry_script_tags('common') }}
+			{% endblock %}
+			{# 
+									<div class="cookies -hide" id="cookies-message">
+										<svg id="Capa_1" style="fill:#195ede;" enable-background="new 0 0 556.235 556.235" height="30" viewbox="0 0 556.235 556.235" width="30" xmlns="http://www.w3.org/2000/svg">
+											<path d="m278.118 0c-153.6 0-278.118 124.518-278.118 278.118s124.518 278.118 278.118 278.118c8.144 0 16.158-.533 24.126-1.218-4.327-10.325-6.743-21.652-6.743-33.547 0-24.433 10.151-46.429 26.381-62.219-5.701-12.89-8.999-27.073-8.999-42.075 0-57.6 46.694-104.294 104.294-104.294 15.002 0 29.184 3.297 42.075 8.999 15.791-16.23 37.786-26.381 62.219-26.381 11.895 0 23.222 2.415 33.547 6.741.685-7.968 1.218-15.98 1.218-24.124-.001-153.6-124.519-278.118-278.118-278.118zm-191.206 278.118c-9.599 0-17.382-7.783-17.382-17.382 0-9.601 7.783-17.382 17.382-17.382s17.382 7.781 17.382 17.382c0 9.599-7.783 17.382-17.382 17.382zm86.911 139.058c-19.201 0-34.765-15.566-34.765-34.765 0-19.201 15.564-34.765 34.765-34.765s34.765 15.564 34.765 34.765c0 19.199-15.564 34.765-34.765 34.765zm34.765-243.353c-19.201 0-34.765-15.566-34.765-34.765 0-19.201 15.564-34.765 34.765-34.765s34.765 15.564 34.765 34.765c0 19.199-15.564 34.765-34.765 34.765zm52.147 139.059c-9.599 0-17.382-7.783-17.382-17.382 0-9.601 7.783-17.382 17.382-17.382s17.382 7.781 17.382 17.382c.001 9.599-7.782 17.382-17.382 17.382zm104.294-243.353c9.599 0 17.382 7.781 17.382 17.382 0 9.599-7.783 17.382-17.382 17.382s-17.382-7.783-17.382-17.382c0-9.601 7.783-17.382 17.382-17.382zm17.383 173.824c-19.201 0-34.765-15.566-34.765-34.765 0-19.201 15.564-34.765 34.765-34.765s34.765 15.564 34.765 34.765c-.001 19.199-15.565 34.765-34.765 34.765z"></path>
+										</svg>
+										<div class="message">Ta strona używa ciasteczek (cookies).
+											<a href="{{path('page_policy-privacy')}}" style="color: #303337;" target="_blank">Dowiedz się więcej</a>
+										</div>
+										<a href="#" id="accept-cookies-checkbox" name="accept-cookies" class="button">OK</a>
+									</div>
+									<div id="snackbar"></div> #}
+			<div id="snackbar"></div>
+		</body>
+	</html>

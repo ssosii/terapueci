@@ -1,0 +1,8 @@
+@use "./../../../../../common/grid" as *;
+
+.pricing--components {
+  width: 60%;
+  @include md-down {
+    width: 100%;
+  }
+}

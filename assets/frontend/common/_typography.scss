@@ -1,0 +1,109 @@
+@import "./grid";
+@import "./colors";
+.link {
+  color: #00164f;
+  transition: color 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    transition: color 0.4s;
+    color: $primary-hover;
+  }
+  > * {
+    color: $text;
+  }
+}
+
+.linkBright {
+  color: #4259a9;
+  transition: all 0.4s;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.4s;
+    text-decoration: underline;
+    // color: $primary;
+  }
+  > * {
+    color: #4259a9;
+  }
+}
+
+.main--title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  color: $text;
+  margin-bottom: 20px;
+  @include md-down() {
+    font-size: 22px;
+  }
+  &.--darkBlue {
+    color: $text-blue;
+  }
+  &.--center {
+    text-align: center;
+  }
+  &.--big {
+    @include lg-up() {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+  &.--marginBottom {
+    margin-bottom: 5rem;
+  }
+}
+
+.main--subtitle {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: $text;
+  &.--small {
+    line-height: 24px;
+  }
+  &.--center {
+    text-align: center;
+  }
+  &.--marginBottom {
+    margin: 0 auto 5rem;
+  }
+  &.--m600 {
+    max-width: 600px;
+  }
+}
+
+.main--smalltitle {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: $text;
+  letter-spacing: 0.25px;
+}
+
+.main--description {
+  margin: -40px auto 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.main--line {
+  background: #c6c5d0;
+  height: 1px;
+  width: 100%;
+}
+
+// ul.list--primary {
+// 	list-style: none;
+// }
+// ul.list--primary li::before {
+// 	content: "\2022";
+// 	color: $secondary;
+// 	font-weight: bold;
+// 	display: inline-block;
+// 	width: 1em;
+// 	margin-left: -1em;
+// }

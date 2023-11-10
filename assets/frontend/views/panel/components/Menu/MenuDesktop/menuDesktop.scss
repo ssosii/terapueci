@@ -1,0 +1,37 @@
+// @use "./../../../common/mixin.scss" as *;
+@use "./../../../../../common/colors.scss" as *;
+@use "./../../../../../common/grid.scss" as *;
+
+.menu--component {
+    padding-right:20px;
+    @include md-down(){
+        display:none;
+    }
+
+    .item {
+        border-radius: 100px;
+        display:flex;
+        align-items: center;
+        cursor:pointer;
+        padding:10px 15px;
+        transition: all 0.3s;
+        margin-bottom: 4px;
+        &:hover {
+            background: $secondary;
+        }
+        &.--active{
+            background: $secondary;
+        }
+    }
+    .icon {
+        width: 74px;
+        margin-right: 10px;
+        // outline:1px solid red;
+    }
+    .text {
+        font-weight: 600;
+        color:$text-grey;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+}

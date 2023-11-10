@@ -1,0 +1,26 @@
+@use "./../../../common/mixins" as *;
+@use "./../../../common/grid" as *;
+
+.page--container {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0 auto;
+  //   outline: 1px solid red;
+  @include md-down {
+    flex-direction: column;
+    margin: 80px auto 0 auto;
+  }
+
+  > .content {
+    width: calc(100% - 250px);
+    @include md-down {
+      width: 100%;
+    }
+  }
+  > .menu {
+    width: 250px;
+    @include md-down {
+      width: 100%;
+    }
+  }
+}

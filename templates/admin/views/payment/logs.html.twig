@@ -1,0 +1,62 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">Płatności</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_langue-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+
+	<table>
+			<tr>
+                <th>Id</th>
+				<th>Value</th>
+				<th>Time</th>
+		
+			</tr>
+				{% for payment in paginate.data %}
+
+          
+				<tr>
+				<td>{{payment.id}}</td>
+				<td>
+                    {{payment.value}}
+                </td>
+				<td>
+                    {{payment.createdAt|date('d-m-Y H:i')}}
+                </td>
+
+				</tr>
+			{% endfor %}
+			
+		</table>
+
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

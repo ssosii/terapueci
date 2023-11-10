@@ -1,0 +1,51 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">{{category.name}}</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_category-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+	
+    <div class="subpage--content">
+	<div class="container">
+
+		<form method="POST" class="form-section">
+			<h1 class="form-section__title">Edytuj kategorię</h1>
+			<div class="form-field">
+				<label class="form__label">
+					Nazwa:
+				</label>
+				<input type="text" name="name" value="{{category.name}}"/>
+			</div>
+			<div class="form-field">
+				<label class="form__label">
+					Opis:
+				</label>
+				<textarea style="min-height:300px;"  name="description">{{category.description}}</textarea>
+			</div>
+
+			<div class="form-field" style="display:flex;align-items:center;margin-top:10px;">
+				<label class="form__label">
+					Status:
+				</label>
+                <div class="statusSwitcherComponent" data-type="category-active" data-id="{{category.id}}" data-label="Aktywny" data-value="{{category.isActive}}"></div>
+{#        
+				<input type="checkbox" name="isActive" {{category.isActive ? 'checked' : ''}}/> #}
+			</div>
+			<input type="submit" class="button-secondary form-section__button" value="Zmień">
+		</form>
+	</div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+  {{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

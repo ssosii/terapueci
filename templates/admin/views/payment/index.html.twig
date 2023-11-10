@@ -1,0 +1,81 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-list') }}
+
+{% endblock %}
+{% block body %}
+
+    <div class="subpage--intro">
+		<h2 class="title">Płatności</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_langue-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+    	{% for message in app.flashes('success') %}
+			<div class="toast-success">
+
+			</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error') %}
+			<div class="toast-error">
+			</div>
+		{% endfor %}
+
+	<table>
+			<tr>
+				<th>Id</th>
+				<th>Sesja</th>
+				<th>Kwota</th>
+                <th>Order Id</th>
+                <th>Utworzono</th>
+                <th>Pacjent</th>
+                <th>Dane</th>
+			</tr>
+				{% for payment in paginate.data %}
+                {% set order = payment.appointmentOrder %}
+                <tr>
+                    <td>{{payment.id}}</td>
+                    <td>{{payment.sessionId}}</td>
+                    <td>{{payment.amount}}</td>
+                    <td>{{payment.orderId}}</td>
+                    <td>{{order.selectedDate|date('d-m-Y H:i')}}</td>
+                    <td>
+                        <div>Id: {{order.id}}</div>
+                        <div>Pacjent: {{order.patient.username}}</div>
+                        <div>Specjalista: {{order.doctor.username}}</div>
+                        <div>{{order.appointmentRule.startDate|date('d-m-Y H:i')}}</div>
+                    </td>
+                         <td>
+                    
+                    </td>
+                </tr>
+
+                {# {{dump(payment)}} #}
+                   {# {{dump(payment.appointmentOrder.appointmentRule)}} #}
+				{# <tr>
+				<td>{{langue.name}}</td>
+				<td>
+                <div class="statusSwitcherComponent" data-type="langue-active" data-id="{{langue.id}}" data-label="Aktywna" data-value="{{langue.isActive}}"></div>
+                </td>
+				<td><a href="{{path('admin_langue-edit',{'langue':langue.id})}}" class="btn--primary">Edytuj</a></td>
+
+				</tr> #}
+			{% endfor %}
+			
+		</table>
+
+
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-list') }}
+{% endblock %}

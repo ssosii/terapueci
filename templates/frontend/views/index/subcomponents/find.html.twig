@@ -1,0 +1,60 @@
+<div class="find">
+
+	<div class="container fadeInTrigger">
+		<div class="main--title --big --darkBlue --center ">
+			Znajdź specjalistę</div>
+		<div style="margin: 0 auto" class="main--subtitle --m600 --center">
+			Użyj naszej wyszukiwarki, by znaleźć osobę, która udzieli Ci wsparcia.
+
+		</div>
+	</div>
+	<div class="fadeInTrigger">
+<div class="slider">
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+   
+
+            {% for doctor in doctorsToSLider  %}
+                <div class="swiper-slide">
+		    	<a href="{{path('profile-doctor',{doctor: doctor.id,slug: doctor.slug})}}" class="slider--element">
+                    <div class="slider--photo-wrap">
+                        	<img class="slider--photo" src="{{doctor.getAvatarUrl}}"/>
+                    </div>
+			
+				    <div class="slider--name">{{doctor.username}}</div>
+				    <div class="slider--title">Specjalista</div>
+			    </a>
+                </div>
+            {% endfor %}
+
+ 
+    </div>
+ </div>
+  </div>
+    <!-- If we need pagination -->
+    {# <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div> #}
+</div>
+
+
+{# 
+	<div class="slider fadeInTrigger">
+		<div class="slider--inner">
+            {% for doctor in doctorsToSLider  %}
+		    	<a href="{{path('profile-doctor',{doctor: doctor.id,slug: doctor.slug})}}" class="slider--element">
+			    	<img class="slider--photo" src="{{doctor.getAvatarUrl}}"/>
+				    <p class="slider--name">{{doctor.username}}</p>
+				    <p class="slider--title">Specjalista</p>
+			    </a>
+
+            {% endfor %}
+		</div>
+	</div>
+</div> #}

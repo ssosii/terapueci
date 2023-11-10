@@ -1,0 +1,34 @@
+{% extends 'base.site.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('appointment-info') }}
+{% endblock %}
+{% block body %}
+
+ <div class="appointment-info">
+    <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path d="M15.3335 22H18.6668V25.3333H15.3335V22ZM15.3335 8.66668H18.6668V18.6667H15.3335V8.66668ZM16.9835 0.333344C7.7835 0.333344 0.333496 7.80001 0.333496 17C0.333496 26.2 7.7835 33.6667 16.9835 33.6667C26.2002 33.6667 33.6668 26.2 33.6668 17C33.6668 7.80001 26.2002 0.333344 16.9835 0.333344ZM17.0002 30.3333C9.6335 30.3333 3.66683 24.3667 3.66683 17C3.66683 9.63334 9.6335 3.66668 17.0002 3.66668C24.3668 3.66668 30.3335 9.63334 30.3335 17C30.3335 24.3667 24.3668 30.3333 17.0002 30.3333Z" fill="#BA1A1A"/>
+    </svg>
+    </div>
+    <h2 class="title">Twoja płatność nie powiodła się!</h2>
+
+    <a class="button-return" href="{{returnToOrderUrl}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M1.5 9C1.5 8.0625 1.67812 7.18438 2.03437 6.36563C2.39062 5.54688 2.87187 4.83438 3.47812 4.22813C4.08437 3.62188 4.79688 3.14063 5.61563 2.78438C6.43438 2.42813 7.3125 2.25 8.25 2.25C9.1875 2.25 10.0656 2.42813 10.8844 2.78438C11.7031 3.14063 12.4156 3.62188 13.0219 4.22813C13.6281 4.83438 14.1094 5.54688 14.4656 6.36563C14.8219 7.18438 15 8.0625 15 9V9.1125L16.1625 7.95L17.25 9L14.25 12L11.25 9L12.3375 7.95L13.5 9.1125V9C13.5 7.5375 12.9906 6.29687 11.9719 5.27812C10.9531 4.25937 9.7125 3.75 8.25 3.75C6.7875 3.75 5.54688 4.25937 4.52813 5.27812C3.50938 6.29687 3 7.5375 3 9C3 10.4625 3.50938 11.7031 4.52813 12.7219C5.54688 13.7406 6.7875 14.25 8.25 14.25V15.75C7.3125 15.75 6.43438 15.5719 5.61563 15.2156C4.79688 14.8594 4.08437 14.3781 3.47812 13.7719C2.87187 13.1656 2.39062 12.4531 2.03437 11.6344C1.67812 10.8156 1.5 9.9375 1.5 9Z" fill="white"/>
+        </svg>
+        
+        
+    <span>Spróbuj ponownie</span>
+    </a>
+
+    <p class="description">Jeśli problem się powtórzy, skontaktuj się z działem pomocy:</p>
+    <a class="mail" href="mailto:pomoc@wglowiesieniemiesci.pl">pomoc@wglowiesieniemiesci.pl</a>
+    
+</div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('appointment-info') }}
+{% endblock %}

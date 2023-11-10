@@ -1,0 +1,17 @@
+.button-social {
+  padding: 10px 24px 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #767680;
+  margin-top: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  > svg {
+    margin-right: 5px;
+  }
+  > .text {
+    color: #4259a9;
+    font-size: 14px;
+  }
+}

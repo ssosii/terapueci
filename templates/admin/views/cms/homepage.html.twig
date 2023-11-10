@@ -1,0 +1,30 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-cms-homepage') }}
+
+{% endblock %}
+{% block body %}
+
+	<div class="subpage--intro">
+		<h2 class="title">Strona główna</h2>
+        	<div class="label" style="display:flex;">
+	        {# <a href="{{path('admin_doctor')}}"  class="btn--primary">Wróć</a> #}
+		</div>
+	</div>
+
+	<div class="subpage--content">
+	<div class="container">
+
+
+        <div id="homepage"></div>
+
+	</div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin-cms-homepage') }}
+{% endblock %}

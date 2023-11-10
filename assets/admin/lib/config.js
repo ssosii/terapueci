@@ -1,0 +1,1 @@
+export const serverUrl = location.protocol + '//' + location.host;

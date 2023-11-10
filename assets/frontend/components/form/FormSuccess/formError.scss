@@ -1,0 +1,16 @@
+@import "./../../../common/index.scss";
+
+.form-success {
+    display: flex;
+    // align-items: center;
+    color: $success;
+    border-radius: 5px;
+    // width: 90%;
+    margin:0 auto;
+    // padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    svg {
+      margin-right: 7px;
+    }
+}

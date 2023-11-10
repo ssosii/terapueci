@@ -1,0 +1,36 @@
+
+@import "./../../common/index.scss";
+
+
+.form {
+    &-hours {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      &__item {
+        flex-basis: 30%;
+        padding: 5px;
+        margin: 0 5px 7px 5px;
+        background: $primary;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background: $primary-hover;
+        }
+        &--selected {
+        //   background: $color-green;
+        background-color: green;
+        }
+        &--disable {
+          background: red;
+          cursor: default;
+          &:hover {
+            background: red;
+          }
+        }
+      }
+    }
+  
+  
+  }

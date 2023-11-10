@@ -1,0 +1,28 @@
+@use "./../../../../../common/grid" as *;
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  @include md-down {
+    flex-direction: column-reverse;
+  }
+}
+.list {
+  width: calc(100% - 370px);
+  @include lg-down {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    width: 100%;
+  }
+  
+  //   outline:1px solid red;
+}
+
+// .info {
+//     margin: 20px auto;
+//     font-size: 16px;
+//     font-weight: 500;
+//     letter-spacing: 0.15px
+// }

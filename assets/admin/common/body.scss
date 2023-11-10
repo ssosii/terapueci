@@ -1,0 +1,102 @@
+@import "./grid";
+
+html {
+    // font-size: 62.5%;
+    // font-size: 10px;
+    // height: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 14px;
+    padding: 0 !important;
+    background: $background-page;
+    font-family: "Poppins";
+    height: 100%;
+    min-height: 100%;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+    color: $text;
+    // &.-loaded {
+    //     overflow-y: scroll;
+    // }
+}
+
+a {
+    color: $text;
+    text-decoration: none;
+    &:hover {
+        color: $text;
+        text-decoration: none;
+    }
+}
+
+.display-none {
+    display:none;
+}
+
+.midsection--title {
+    border-bottom: 1px solid #0f2b49;
+    padding-bottom:5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.main--line {
+    width:100%;
+    height:1px;
+    background:#0f2b49;
+    margin: 20px 0 0 0;
+}
+
+.main--title {
+	text-align: center;
+	margin: 0 0 70px 0;
+	&.-func {
+		margin: 0 0 30px 0;
+		> .big {
+			font-size: 22px;
+		}
+	}
+	> .big {
+		font-size: 30px;
+		font-weight: 900;
+		line-height: 1.4;
+		color: $primary;
+		@include lg-up() {
+			font-size: 40px;
+		}
+	}
+	> .small {
+		color: $secondary;
+		margin: 0 0 10px 0;
+	}
+}
+
+.main--description {
+	margin: -40px auto 0 auto;
+	max-width: 1000px;
+	text-align: center;
+}
+
+
+// @include media-breakpoint-md(sm) {
+//     html {
+//         font-size: 50%;
+//         font-size: 8px;
+//     }
+// }
+// @include media-breakpoint-md(lg) {
+//     html {
+//         font-size: 56%;
+//         font-size: 8.96px;
+//     }
+// }
+// @include media-breakpoint-md(xl) {
+//     html {
+//         font-size: 62.5%;
+//         font-size: 10px;
+//     }
+// }

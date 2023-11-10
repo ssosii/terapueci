@@ -1,0 +1,107 @@
+@use "./../../../common/colors" as *;
+@use "./../../../common/grid" as *;
+
+.doctor-item {
+  margin-top: 80px;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e2e1ec;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  @include md-down {
+    margin-top: 40px;
+    display:block;
+  }
+  > .content {
+    width: calc(100% - 420px);
+    border-right: 1px solid #c6c5d0;
+    padding-right: 20px;
+    @include md-down {
+      border-right: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    > .label {
+      display: flex;
+      text-decoration: none;
+      margin-bottom: 20px;
+      @include sm-down {
+        display: block;
+      }
+      
+      > .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+        position: relative;
+        img {
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit: contain;
+        }
+      }
+      > .info {
+        > .username {
+          font-size: 22px;
+          font-weight: 500;
+          color: $text;
+        }
+        > .categories {
+          display: flex;
+          margin-bottom: 20px;
+          color: $primary;
+          > .item {
+            font-size: 14px;
+            color: $primary;
+          }
+        }
+        > .langues {
+          font-size: 14px;
+          color: $text;
+          > .title {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    > .info {
+        >.item {
+            margin-top: 20px;
+      > .title {
+        font-weight: 600;
+        margin-bottom: 3px;
+        font-size: 18px;
+      }
+      > .description {
+        font-size: 14px;
+        font-style: normal;
+        white-space: pre-line;
+      } 
+      > .categories {
+        display: flex;
+        margin-bottom: 20px;
+        color: $primary;
+        > .item {
+          font-size: 14px;
+          color: $primary;
+        }
+      }
+    }
+    }
+  }
+  > .action {
+    width: 400px;
+    @include md-down {
+      width: 100%;
+    }
+    > .empty-info {
+    }
+  }
+}

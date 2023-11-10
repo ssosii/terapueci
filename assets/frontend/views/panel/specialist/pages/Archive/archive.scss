@@ -1,0 +1,8 @@
+@use "./../../../../../common/grid" as *;
+
+.archive--component {
+  width: 60%;
+  @include md-down {
+    width: 100%;
+  }
+}

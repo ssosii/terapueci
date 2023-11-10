@@ -1,0 +1,99 @@
+{% extends 'base.admin.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+
+	{{ encore_entry_link_tags('admin-index') }}
+
+{% endblock %}
+{% block body %}
+
+	<div class="subpage--intro">
+		<h2 class="title">Lista specjalistów</h2>
+        	<div class="label" style="display:flex;">
+	        <a href="{{path('admin_doctor-create')}}"  class="btn--secondary">Dodaj</a>
+		</div>
+	</div>
+
+	{% for message in app.flashes('success') %}
+		<div class="toast-success">
+		</div>
+	{% endfor %}
+
+	{% for message in app.flashes('error') %}
+		<div class="toast-error">
+		</div>
+	{% endfor %}
+
+
+
+	<div class="subpage--content">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Avatar</th>
+				<th>Imię i nazwisko</th>
+				<th>Email</th>
+				<th>Aktywny</th>
+                <th>Wyróżniony</th>
+				{# <th>Kateogier</th> #}
+			 <th></th>
+					{#<th></th> #}
+			</tr>
+			{% for user in paginate.data %}
+    
+				<tr>
+				<td>{{user.id}}</td>
+					<td>
+                    <img class="avatar" src="{{user.getAvatarUrl}}"/>
+                    </td>
+					<td>{{user.username}}</td>
+					<td>{{user.email}}</td>
+					<td>
+						<div class="statusSwitcherComponent" data-type="doctor-active" data-id="{{user.id}}" data-label="Aktywny" data-value="{{user.isActive}}"></div>
+					</td>
+                    		<td>
+						<div class="statusSwitcherComponent" data-type="doctor-highlighted" data-id="{{user.id}}" data-label="Wyróżniony" data-value="{{user.isHighlighted}}"></div>
+					</td>
+                    {# <td>
+                     {% for category in user.doctorCategories %}
+						<div class="form-hours__item form-hours__item--selected" data-type="{{category.id}}">{{category.name}}</div>
+					 {% endfor %}
+    
+                    </td> #}
+{#              
+				<div class="display-none">
+					<select name="categories[]" multiple>
+						{% for category in categories %}
+							<option value="{{category.id}}" data-type="{{category.id}}" {{ category.id in preparedUserCategories ? " selected" : "" }}>{{category.name}}</option>
+						{% endfor %}
+					</select>
+				</div> #}
+
+
+			</div>
+
+			    	<td><a href="{{path('admin_doctor-edit',{'user':user.id})}}" class="btn--primary">Edytuj</a></td>
+
+					{# 	<td>
+						<a target="_blank" href="{{path('user_profile',{'user':user.id,'slug':user.slug})}}">Profil</a>
+					</td>
+					<td>
+						<div data-profile="{{user.id}}" data-owner="1" class="profilePrivateComponent"></div>
+					</td>
+					<td>
+						<div data-token="{{user.tokenActivePassword}}" data-avatar="{{user.getAvatarUrl}}" data-description="{{user.description}}" data-id="{{user.id}}" data-description="{{user.description}}" data-shortdescription="{{user.shortDescription}}" data-firstname="{{user.username}}" data-secondname="{{user.secondName}}" data-email="{{user.email}}" data-active="{{user.isActive}}" class="editUserComponent"></div>
+					</td> #}
+				</tr>
+			{% endfor %}
+			
+		</table>
+	</div>
+
+
+	{% include 'components/pagination/index.html.twig' with {'paginate': paginate} only %}
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+		{{ encore_entry_script_tags('admin-index') }}
+{% endblock %}
